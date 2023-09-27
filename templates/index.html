@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Email Registration</title>
+    <style>
+ body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-family: Montserrat, sans-serif;
+        }
+
+        .form-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #000000;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3a0539;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0f770b;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Check Email Registration</h1>
+        <form class="form-layout" method="POST">
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+        {% if message %}
+        <p>{{ message }}</p>
+      
+        
+        {% endif %}
+    </div>
+</body>
+</html>
