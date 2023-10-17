@@ -7,11 +7,9 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-# If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-# The ID of your Google Sheet.
-SPREADSHEET_ID = '1Ff7o2adQyI8rg0E9b0mI434tj3SFAziLQfAj2RD3inc'  # Replace with your Google Sheet ID
+SPREADSHEET_ID = '1Ff7o2adQyI8rg0E9b0mI434tj3SFAziLQfAj2RD3inc' 
 RANGE_NAME = 'Form Responses 1!E:E'
 
 app = Flask(__name__)
@@ -44,12 +42,10 @@ def is_email_registered(email):
             print('No data found.')
             return False
 
-        # Iterate through the values and check if the email exists
         for row in values:
             if len(row) >= 1 and row[0] == email:
                 return True
 
-        # Email not found
         return False
 
     except HttpError as err:
